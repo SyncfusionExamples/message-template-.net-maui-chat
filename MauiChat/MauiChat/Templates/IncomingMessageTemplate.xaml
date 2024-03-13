@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:avatar="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="MauiChat.IncomingMessageTemplate">
+    <ContentView.Content>
+        <Grid HorizontalOptions="Start" ColumnSpacing="4" Margin="0,0,0,4" Padding="8" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition Width="0.8*" />
+                <ColumnDefinition Width="0.2*" />
+            </Grid.ColumnDefinitions>
+
+            <avatar:SfAvatarView Grid.Row="0"
+                         Grid.Column="0" 
+                         WidthRequest="36"
+                         HeightRequest="36"
+                         CornerRadius="18"
+                         VerticalOptions="Start"
+                         HorizontalOptions="Center"
+                         Stroke="Transparent"
+                         ContentType="Default"
+                         ImageSource="{Binding Author.Avatar}" />
+
+            <Border Grid.Row="0" Grid.Column="1">
+                <StackLayout BackgroundColor="#FFFFFF" Spacing="4" Padding="16,8,16,8">
+                    <Label HorizontalOptions="Start"
+                       Text="{Binding Text}"
+                       LineBreakMode="WordWrap"
+                       TextColor="#212121"
+                       FontFamily="Roboto-Regular"
+                       FontSize="14"
+                       VerticalTextAlignment="Center" />
+                </StackLayout>
+            </Border>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
